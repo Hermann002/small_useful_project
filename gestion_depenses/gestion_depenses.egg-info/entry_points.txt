@@ -1,0 +1,2 @@
+[console_scripts]
+depense = gestion_depenses.main:main
