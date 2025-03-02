@@ -1,0 +1,4 @@
+env/
+.env
+depenses.csv
+passwords.md

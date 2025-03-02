@@ -1,0 +1,2 @@
+[console_scripts]
+generate-password = password_generator.main:main
