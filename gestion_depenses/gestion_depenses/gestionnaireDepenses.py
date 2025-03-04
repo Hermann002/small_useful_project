@@ -2,6 +2,7 @@ from gestion_depenses.depense import Depense
 import os
 import csv
 from datetime import datetime
+import pandas as pd
 
 class GestionnaireDepenses():
     
@@ -22,7 +23,7 @@ class GestionnaireDepenses():
     def sauvegarder_depenses(self):
         """Sauvegarde les dépenses dans le fichier CSV en mode ajout."""
         file_exists = os.path.exists(self.file)
-        print(file_exists)
+        print(f"file exist ? {file_exists}")
         depense = self.depenses
 
         if not file_exists:
@@ -84,3 +85,7 @@ class GestionnaireDepenses():
             print(f"depenses de la categorie {categorie} au mois de {mois}")
             for depense in depenses_filtrees:
                 print(depense)
+
+    def tous_afficher(self):
+        depense = pd.read_csv(self.file)
+        print(depense)

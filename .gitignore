@@ -2,3 +2,4 @@ env/
 .env
 depenses.csv
 passwords.md
+__pycache__/
