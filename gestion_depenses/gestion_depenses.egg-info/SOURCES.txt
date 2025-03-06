@@ -4,6 +4,7 @@ gestion_depenses/__init__.py
 gestion_depenses/depense.py
 gestion_depenses/gestionnaireDepenses.py
 gestion_depenses/main.py
+gestion_depenses/utils.py
 gestion_depenses.egg-info/PKG-INFO
 gestion_depenses.egg-info/SOURCES.txt
 gestion_depenses.egg-info/dependency_links.txt

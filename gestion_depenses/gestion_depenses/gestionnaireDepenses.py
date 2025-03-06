@@ -11,7 +11,7 @@ class GestionnaireDepenses():
         self.depenses = self.charger_depenses()
 
     def charger_depenses(self):
-        print("chargement des depenses...")
+        print("loading of expenses...")
         if not os.path.exists(self.file):
             return []
         
@@ -53,15 +53,15 @@ class GestionnaireDepenses():
         depense = Depense(date=datetime.now().strftime('%Y-%m-%d'), montant=montant, categorie=categorie, description=description)
         self.depenses = depense
         self.sauvegarder_depenses()
-        print(f"nouvelle depense ajoutée")
+        print(f"new expense added")
 
     def affiche_depenses(self):
         if not self.depenses:
-            print("Aucune depense enregistrée")
+            print("No expenses recorded")
             return
         
         total = sum(depense.montant for depense in self.depenses)
-        print(f"total des depenses: {total} XAF")
+        print(f"total expenses: {total} XAF")
 
         categories = {}
         for depense in self.depenses:
@@ -80,12 +80,12 @@ class GestionnaireDepenses():
             depenses_filtrees = [depense for depense in depenses_filtrees if datetime.strptime(depense.date, "%Y-%m-%d").strftime("%Y-%m") == mois]
         
         if not depenses_filtrees:
-            print("Aucune depense trouvée")
+            print("No expenses found")
         else: 
-            print(f"depenses de la categorie {categorie} au mois de {mois}")
+            print(f"expenses for category {categorie} in the month of {mois}")
             for depense in depenses_filtrees:
                 print(depense)
 
     def tous_afficher(self):
-        depense = pd.read_csv(self.file)
+        depense = pd.read_csv(self.file, encoding="ISO-8859-1")
         print(depense)

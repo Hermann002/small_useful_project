@@ -6,7 +6,7 @@ setup(
     packages=["gestion_depenses"],
     entry_points={
         "console_scripts": [
-            "depense=gestion_depenses.main:main",
+            "expense=gestion_depenses.main:main",
         ],
     },
 )
